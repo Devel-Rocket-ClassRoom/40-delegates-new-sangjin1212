@@ -1,4 +1,25 @@
 using System;
+using System.Globalization;
+Console.WriteLine("=== 사칙연산 대리자 ===");
+MathOp add = Add;
+Console.WriteLine("[덧셈]");
+Console.WriteLine($"20 + 4 = {add(20, 4)}");
+Console.WriteLine();
+MathOp sub = Subtract;
+Console.WriteLine("[뺄셈]");
+Console.WriteLine($"20 - 4 = {sub(20, 4)}");
+Console.WriteLine();
+MathOp mul = Multiply;
+Console.WriteLine("[곱셈]");
+Console.WriteLine($"20 * 4 = {mul(20, 4)}");
+Console.WriteLine();
+MathOp div = Divide;
+Console.WriteLine("[나눗셈]");
+Console.WriteLine($"20 / 4 = {div(20, 4)}");
+Console.WriteLine();
+static int Add(int a, int b) => a + b;
+static int Subtract(int a, int b) => a - b;
+static int Multiply(int a, int b) => a * b;
+static int Divide(int a, int b) => a / b;
 
-// README.md를 읽고 코드를 작성하세요.
-Console.WriteLine("코드를 작성하세요.");
+delegate int MathOp(int a, int b);
